@@ -1,0 +1,31 @@
+{% extends 'inventory_app/base.html' %}
+
+{% block content %}
+<div class="py-5">
+    <h1 class="mb-4">Cadastrar Produto</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" class="card card-body">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_nome" class="form-label">Nome do Produto</label>
+                    <input type="text" class="form-control" id="id_nome" name="nome" placeholder="Insira o nome do produto" required>
+                </div>
+                <div class="mb-3">
+                    <label for="id_quantidade" class="form-label">Quantidade</label>
+                    <input type="number" class="form-control" id="id_quantidade" name="quantidade" placeholder="0" min="0" required>
+                </div>
+                <div class="mb-3">
+                    <label for="id_preco" class="form-label">Preço (R$)</label>
+                    <input type="number" class="form-control" id="id_preco" name="preco" placeholder="0.00" step="0.01" min="0" required>
+                </div>
+                <div class="mb-3">
+                    <label for="id_categoria" class="form-label">Categoria</label>
+                    <input type="text" class="form-control" id="id_categoria" name="categoria" placeholder="Insira a categoria do produto" required>
+                </div>
+                <button type="submit" class="btn btn-success">Salvar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
